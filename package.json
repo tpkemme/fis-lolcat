@@ -1,6 +1,6 @@
 {
   "name": "fis-lolcat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "rainbow output",
   "main": "index.js",
   "scripts": {

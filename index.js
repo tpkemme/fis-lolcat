@@ -30,7 +30,7 @@ function lolcat(string, seed) {
         }
         output[line] = output[line].join("");
     }
-    return output.join("\n");
+    return output.join("\n") + '\x1b[0m';
 }
 
 // Ported directly from lol.rb:rainbow
