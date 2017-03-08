@@ -1,26 +1,25 @@
 {
-  "name": "fis-lolcat",
-  "version": "1.0.1",
-  "description": "rainbow output",
+  "name": "tLolcat",
+  "version": "1.0.0",
+  "description": "RAINBOW STYLEZ WIF HTML OUTPUT",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/2betop/fis-lolcat.git"
+    "url": "https://github.com/tpkemme/tLolcat.git"
   },
   "keywords": [
-    "fis",
-    "lolcat"
+    "tpkemme",
+    "lolcat",
+    "rainbow,
+    "html"
   ],
-  "author": "fis",
+  "author": "tpkemme",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/2betop/fis-lolcat/issues"
+    "url": "https://github.com/tpkemme/tLolcat/issues"
   },
-  "homepage": "https://github.com/2betop/fis-lolcat",
-  "dependencies": {
-    "x256": "0.0.2"
-  }
+  "homepage": "https://github.com/tpkemme/tLolcat"
 }
