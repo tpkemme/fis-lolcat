@@ -1,4 +1,3 @@
-
 String.prototype.segment = function(length, offset) {
     "use strict";
     var output = [];
@@ -7,18 +6,17 @@ String.prototype.segment = function(length, offset) {
     for (; position < this.length;) output.push(this.slice(Math.max(0, position), position += length));
     return output;
 }
-
-function lolcat(string, seed) {
-    if (lolcat.disabled) {
+// JS to HTML implementation of lolcat
+function tLolcat(string, seed) {
+    if (tLolcat.disabled) {
       return string;
     }
-
     var segmentLength = 11;
     var spread = 3;
     var freq = 0.1;
     seed = seed || (Math.random() * 20);
     // Make tabs display as spaces
-    var output = string.replace(/\t/g, "        ").split("\n");
+    var output = string.replace(/ /g, '\u00a0').split("\n");
     var color, string;
     for (var line = 0; line < output.length; line++) {
         output[line] = output[line].segment(segmentLength, line * spread + 2);
@@ -29,7 +27,7 @@ function lolcat(string, seed) {
         }
         output[line] = output[line].join("");
     }
-    return output.join("\n");
+    return '<span style="font-size: 12px;">' + output.join("\r\n<br></span>");
 }
 
 // Ported directly from lol.rb:rainbow
@@ -37,9 +35,10 @@ function rainbow(freq, i) {
     var red = Math.round(Math.sin(freq * i + 0) * 127 + 128);
     var green = Math.round(Math.sin(freq * i + 2 * Math.PI / 3) * 127 + 128);
     var blue = Math.round(Math.sin(freq * i + 4 * Math.PI / 3) * 127 + 128);
-    return '<span style="color:rgb(' + red + ',' + green + ',' + 'blue' + ')">';
+    return '<span style="color:rgb(' + red + ',' + green + ',' + blue + ')">';
+
 }
 
-lolcat.disabled = process.platform.indexOf('win') === 0;
+tLolcat.disabled = process.platform.indexOf('win') === 0;
 
-module.exports = lolcat;
+module.exports = tLolcat;
