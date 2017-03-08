@@ -1,4 +1,3 @@
-var x256 = require('x256');
 
 String.prototype.segment = function(length, offset) {
     "use strict";
@@ -26,11 +25,11 @@ function lolcat(string, seed) {
         for (var segment = 0; segment < output[line].length; segment++) {
             string = output[line][segment];
             color = rainbow(freq, (segment - line - seed) * spread);
-            output[line][segment] = color + 'm' + string;
+            output[line][segment] = color + string + '</span>';
         }
         output[line] = output[line].join("");
     }
-    return output.join("\n") + '\x1b[0m';
+    return output.join("\n");
 }
 
 // Ported directly from lol.rb:rainbow
@@ -38,8 +37,7 @@ function rainbow(freq, i) {
     var red = Math.round(Math.sin(freq * i + 0) * 127 + 128);
     var green = Math.round(Math.sin(freq * i + 2 * Math.PI / 3) * 127 + 128);
     var blue = Math.round(Math.sin(freq * i + 4 * Math.PI / 3) * 127 + 128);
-    var ix = x256(red, green, blue);
-    return '\x1b[38;5;' + ix;
+    return '<span style="color:rgb(' + red + ',' + green + ',' + 'blue' + ')">;
 }
 
 lolcat.disabled = process.platform.indexOf('win') === 0;
