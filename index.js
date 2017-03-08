@@ -37,7 +37,7 @@ function rainbow(freq, i) {
     var red = Math.round(Math.sin(freq * i + 0) * 127 + 128);
     var green = Math.round(Math.sin(freq * i + 2 * Math.PI / 3) * 127 + 128);
     var blue = Math.round(Math.sin(freq * i + 4 * Math.PI / 3) * 127 + 128);
-    return '<span style="color:rgb(' + red + ',' + green + ',' + 'blue' + ')">;
+    return '<span style="color:rgb(' + red + ',' + green + ',' + 'blue' + ')">';
 }
 
 lolcat.disabled = process.platform.indexOf('win') === 0;
